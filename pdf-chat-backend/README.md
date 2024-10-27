@@ -84,4 +84,70 @@ Parameters: PDF file as form-data
 Description: Uploads a PDF file, extracts its text content, and stores it in the database.
 
 Request Example:
+```
+curl -X 'POST' \
+  'http://127.0.0.1:8000/upload' \
+  -F 'file=@your_pdf_file.pdf'
 
+```
+Response:
+```
+{
+  "filename": "your_pdf_file.pdf"
+}
+```
+### 2. Ask Question
+
+Endpoint: `/ask`
+Method: `POST`
+Parameters:
+
+question (string): The question related to the PDF content.
+file_name (string): Name of the uploaded PDF file.
+better_answer (boolean, optional): If true, uses the Google Gemini API for enhanced answers.
+Description: Processes the question with the document content and returns an answer. Uses either Hugging Face or Google Gemini for NLP.
+
+Request Example:
+
+```
+curl -X 'POST' \
+  'http://127.0.0.1:8000/ask' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "question": "What is mentioned about PDF parsing?",
+    "file_name": "your_pdf_file.pdf",
+    "better_answer": true
+  }'
+  ```
+Response:
+
+```
+{
+  "answer": "PDF parsing is mentioned as a way to extract text from PDFs."
+}
+
+```
+3. Get Chat History
+Endpoint: /history/{filename}
+Method: GET
+Parameters: filename (string) - The name of the uploaded PDF file
+Description: Retrieves the chat history for the specified document, showing past questions and answers.
+
+Request Example:
+
+```
+curl -X 'GET' 'http://127.0.0.1:8000/history/your_pdf_file.pdf'
+
+```
+Response:
+
+```
+[
+  {
+    "question": "What is PDF parsing?",
+    "answer": "PDF parsing is the process of extracting text from a PDF.",
+    "timestamp": "2024-01-01T12:00:00"
+  },
+  ...
+]
+```
