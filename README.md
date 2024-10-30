@@ -3,6 +3,7 @@
 PDF Wizard is a web application that allows users to upload PDF documents and ask questions about their content. The system processes the document using Natural Language Processing (NLP) and answers user queries based on the document's text. Additionally, it maintains a chat history, enabling users to ask follow-up questions within the same context.
 
 You can try the PDF Wizard application at [https://pdf-wizard-eight.vercel.app/](https://pdf-wizard-eight.vercel.app/).
+You can check the demo of PDF Wizard application at [https://drive.google.com/file/d/1PyOoJv4_oUnRZfuv9IN31hMq-lG3VbK7/view](https://drive.google.com/file/d/1PyOoJv4_oUnRZfuv9IN31hMq-lG3VbK7/view)
 
 ## Features
 
