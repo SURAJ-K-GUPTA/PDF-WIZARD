@@ -24,8 +24,8 @@ function Navbar({ onUpload, filename, loading }) {
           alt="Logo"
           className="h-8 w-8"
         />
-        <div className="text-lg font-semibold text-gray-800">planet</div>
-        <span className="text-xs text-gray-500 hidden sm:block">formerly DPhi</span>
+        <div className="text-lg font-semibold text-gray-800">PDF WIZARD</div>
+        
       </div>
 
       <div className="flex items-center space-x-4">
